@@ -148,6 +148,15 @@ System.out.println(a[0]);   // 100 😱 (a also changed!)
 
 **Why?** From note 02: `a` and `b` are just address slips pointing to the SAME Heap object.
 
+### 📊 See the trap vs the real copy:
+
+```mermaid
+flowchart LR
+    A["a"] -- "points to" --> ARR1["🏭 Heap: array 100, 2, 3<br>ONE object"]
+    B["b = a<br>(sirf address copy hua!)"] -- "points to SAME array" --> ARR1
+    C["c = Arrays.copyOf(a, ...)"] -- "points to" --> ARR2["🏭 Heap: NEW separate array 999, 2, 3"]
+```
+
 **Real copy:**
 ```java
 int[] c = java.util.Arrays.copyOf(a, a.length);   // ✅ separate copy

@@ -32,6 +32,15 @@ Class = cake ka **mould** (shape design). Objects = us mould se bane **real cake
 ### 🏭 Analogy 2: Aadhaar card form
 Class = **blank form ka design** (fields: name, DOB, address). Object = **bhara hua form** (Ashu ka apna data).
 
+### 📊 Ek class, kitne bhi objects:
+
+```mermaid
+flowchart TD
+    CLS["📋 CLASS: Student (blueprint)<br>fields: name, roll, marks<br>methods: introduce, isPassed"] -- "new Student()" --> O1["🎂 Object s1<br>Ashu, roll 1, 88.5"]
+    CLS -- "new Student()" --> O2["🎂 Object s2<br>Rahul, roll 2, 35.0"]
+    CLS -- "new Student()" --> O3["🎂 Object s3<br>...jitne chaaho utne!"]
+```
+
 ---
 
 ## 3. Your first class + objects
@@ -91,17 +100,18 @@ public class Main {
 
 ## 4. Memory picture (notes 02 & 06 connect ho rahi hain!)
 
-```
-        STACK                        HEAP
-┌────────────────┐    ┌────────────────────────┐
-│ main() frame:  │    │  Student object @101:  │
-│  s1 = @101 ────┼───→│   name="Ashu" roll=1   │
-│  s2 = @205 ────┼─┐  │   marks=88.5           │
-│                │ │  ├────────────────────────┤
-└────────────────┘ └─→│  Student object @205:  │
-                      │   name="Rahul" roll=2  │
-                      │   marks=35.0           │
-                      └────────────────────────┘
+```mermaid
+flowchart LR
+    subgraph STACK["🍽️ STACK — references"]
+        S1["s1 = @101"]
+        S2["s2 = @205"]
+    end
+    subgraph HEAP["🏭 HEAP — objects"]
+        OB1["Student object @101<br>name = Ashu, roll = 1<br>marks = 88.5"]
+        OB2["Student object @205<br>name = Rahul, roll = 2<br>marks = 35.0"]
+    end
+    S1 -- "points to" --> OB1
+    S2 -- "points to" --> OB2
 ```
 
 - Har object ki **APNI copy** hoti hai fields ki (s1 ka name alag, s2 ka alag).

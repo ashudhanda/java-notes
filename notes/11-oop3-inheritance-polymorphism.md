@@ -36,6 +36,13 @@ public class Main {
 }
 ```
 
+### 📊 Kya kis ko milta hai:
+
+```mermaid
+flowchart TD
+    AN["🐾 Animal (parent)<br>name, eat(), sleep()"] -- "extends" --> DG["🐶 Dog (child)<br>inherited: name, eat(), sleep()<br>apna: bark()"]
+```
+
 **`extends` = "main iska child hoon, iski sab cheezein mujhe do".**
 
 ### IS-A rule (kab inheritance use karein?)
@@ -48,11 +55,25 @@ public class Main {
 
 ## 2. Types of Inheritance (quick view)
 
-```
-Single:        A → B                    (Animal → Dog)
-Multilevel:    A → B → C               (Animal → Dog → Puppy)
-Hierarchical:  A → B, A → C            (Animal → Dog, Animal → Cat)
-Multiple:      A, B → C  ❌ JAVA ME NAHI! (classes se nahi — sirf interfaces se, note 12!)
+### 📊 All 4 types in one picture:
+
+```mermaid
+flowchart TD
+    subgraph T4["Multiple ❌ classes se JAVA ME NAHI"]
+        A4["ClassA"] --> C4["Child"]
+        B4["ClassB"] --> C4
+    end
+    subgraph T3["Hierarchical ✅"]
+        A3["Animal"] --> B3["Dog"]
+        A3 --> C3["Cat"]
+    end
+    subgraph T2["Multilevel ✅"]
+        A2["Animal"] --> B2["Dog"]
+        B2 --> C2["Puppy"]
+    end
+    subgraph T1["Single ✅"]
+        A1["Animal"] --> B1["Dog"]
+    end
 ```
 
 ⚠️ **Interview question:** "Java me multiple inheritance kyu nahi?" → **Diamond problem**: agar do parents me SAME method ho, child kiska version le? Confusion! Isliye Java ne classes ke liye ban kiya (interfaces se solution note 12 me).
@@ -159,6 +180,16 @@ public class Main {
 // Woof! 🐶
 // Meow! 🐱
 // Some generic sound
+```
+
+### 📊 Dynamic dispatch — same call, alag result (runtime pe decide):
+
+```mermaid
+flowchart TD
+    CALL["a.makeSound()<br>SAME line of code"] --> CHECK{"Runtime pe JVM dekhta hai:<br>reference ke andar<br>ACTUAL object kaun hai?"}
+    CHECK -- "Dog object" --> D["Woof! 🐶"]
+    CHECK -- "Cat object" --> CT["Meow! 🐱"]
+    CHECK -- "Animal object" --> AO["Some generic sound"]
 ```
 
 **Ye kaise hua?** Java RUN TIME pe dekhta hai ki reference ke andar ACTUAL object kaun hai, aur USKA method chalata hai. Isko **dynamic method dispatch** kehte hain (interview term 🎯).
