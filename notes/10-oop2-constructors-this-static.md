@@ -31,6 +31,13 @@ Student s1 = new Student("Ashu", 1);    // "Student created!" prints automatical
 System.out.println(s1.name);            // Ashu — ready-made object!
 ```
 
+### 📊 Kya hota hai `new` likhte hi:
+
+```mermaid
+flowchart LR
+    NEW["new Student('Ashu', 1)"] --> MEM["🏭 Heap me memory bani"] --> CON["Constructor AUTO chala<br>name = Ashu, roll = 1"] --> OBJ["🎁 READY-MADE object s1<br>koi manual setup nahi!"]
+```
+
 ### 🏭 Analogy: New phone ka setup wizard 📱
 Naya phone kholte hi setup screen AUTOMATICALLY aati hai (language, wifi, account). Tum manually har setting dhundh ke set nahi karte. Constructor = wohi setup wizard — object bante hi zaroori cheezein set.
 
@@ -160,15 +167,19 @@ System.out.println(Student.count);    // 2 — dono objects ne SAME counter badh
 - Har student ki **apni notebook** = instance variables (sabki alag)
 - Classroom ka **blackboard EK hai** = static variable (sab share karte hain, ek ne badla toh sabke liye badla)
 
-### Memory picture:
-```
-     HEAP (objects)              CLASS AREA (ek hi baar)
-┌───────────────┐        ┌─────────────────────┐
-│ a: name="Ashu" │        │ Student.school =    │
-├───────────────┤        │   "DAV Public..."   │
-│ b: name="Rahul"│        │ Student.count = 2   │
-└───────────────┘        └─────────────────────┘
-  (name har object me)      (school/count SIRF EK jagah)
+### 📊 Memory picture — instance vs static:
+
+```mermaid
+flowchart TD
+    subgraph HEAP["🏭 HEAP — har object ki APNI copy"]
+        A["object a<br>name = Ashu"]
+        B["object b<br>name = Rahul"]
+    end
+    subgraph CLS["🏫 CLASS AREA — SIRF EK jagah"]
+        SC["Student.school = DAV Public School<br>Student.count = 2"]
+    end
+    A -- "share karta hai" --> SC
+    B -- "share karta hai" --> SC
 ```
 
 ### Static methods

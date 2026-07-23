@@ -55,6 +55,14 @@ Shape c = new Circle(5);      // ✅ Parent reference, child object (note 11!)
 c.describe();                 // Circle area: 78.53975
 ```
 
+### 📊 Abstract class ek nazar me:
+
+```mermaid
+flowchart TD
+    SH["🚫 Shape (abstract) — object NAHI banta<br>abstract area() = body nahi, sirf rule<br>describe() = normal method, ready code"] --> CI["✅ Circle — object banta hai<br>area() ki APNI body: 3.14159 × r × r"]
+    SH --> SQ["✅ Square — object banta hai<br>area() ki APNI body: side × side"]
+```
+
 ### Abstract class rules:
 | Rule | Detail |
 |------|--------|
@@ -97,7 +105,7 @@ Playable p = new MusicPlayer();
 p.play();                          // 🎵 Music playing...
 ```
 
-### 🏭 Analogy: Driving license ka syllabus 😁7
+### 🏭 Analogy: Driving license ka syllabus 😁
 License lene ke liye rules FIXED hain: gaadi chalani aani chahiye, signs pata hone chahiye. HOW you learned (driving school, papa se, khud) — kisi ko farak nahi padta. **Interface = syllabus (rules), class = tumhari taiyari (implementation).**
 
 ### 🎉 Diamond problem SOLVED (note 11 ka promise!)
@@ -112,6 +120,14 @@ class Duck implements Flyable, Swimmable {     // DONO! Comma laga ke
     public void fly()  { System.out.println("Duck flying 🦆"); }
     public void swim() { System.out.println("Duck swimming 🏊"); }
 }
+```
+
+### 📊 Kyu chalta hai? Body ka jhagda hi nahi:
+
+```mermaid
+flowchart TD
+    FL["📜 Flyable (interface)<br>sirf RULE: fly()<br>body NAHI"] -- "implements" --> DK["🦆 Duck ✅<br>fly() + swim() dono ki<br>body KHUD likhta hai<br>= koi confusion nahi!"]
+    SW["📜 Swimmable (interface)<br>sirf RULE: swim()<br>body NAHI"] -- "implements" --> DK
 ```
 
 **Confusion kyu nahi hota?** Interface me sirf signature hota hai, body NAHI — body toh Duck khud likhta hai. Do parents se same METHOD BODY aane ka jhagda hi nahi! 🎯
@@ -129,10 +145,14 @@ class Duck implements Flyable, Swimmable {     // DONO! Comma laga ke
 | Object banana | ❌ | ❌ |
 | Kab use karein | classes me COMMON CODE + kuch abstract | pure RULES/CAPABILITY define karni ho |
 
-### Kaunsa kab? (simple decision)
-- Related classes + shared code chahiye → **abstract class** (Animal: eat/sleep common, sound abstract)
-- Sirf capability/rule batana hai, unrelated classes bhi follow kar sakein → **interface** (Playable: MusicPlayer bhi, VideoPlayer bhi — dono unrelated!)
-- Multiple cheezein chahiye → **interface** hi option hai
+### 📊 Kaunsa kab? (decision flowchart)
+
+```mermaid
+flowchart TD
+    Q{"Kya chahiye?"} -- "related classes +<br>SHARED CODE bhi" --> AC["abstract class<br>(Animal: eat/sleep ready,<br>sound abstract)"]
+    Q -- "sirf rules / capability,<br>unrelated classes bhi follow karein" --> IF["interface<br>(Playable: Music + Video<br>dono unrelated)"]
+    Q -- "ek se zyada cheezein<br>implement karni hain" --> IF
+```
 
 💡 Real Java examples: `Comparable`, `Runnable` (note 15 me milega!), `List` — sab interfaces!
 
