@@ -2,7 +2,7 @@
 
 > **Goal:** Java should feel EASY, not scary. Simple language + real-life examples + working code = Java clear.
 
-These notes are made for students by researching the best & easiest Java resources on the internet (GeeksforGeeks, W3Schools, Baeldung, BeginnersBook, DigitalOcean, Jenkov, university notes and more) — and rewriting everything in the **simplest possible language**.
+These notes are made for students by researching the best & easiest Java resources on the internet (GeeksforGeeks, W3Schools, Baeldung, BeginnersBook, DigitalOcean, w3resource, JavaConceptOfTheDay, HackerRank, PrepInsta and more) — and rewriting everything in the **simplest possible language**.
 
 ---
 
@@ -10,8 +10,8 @@ These notes are made for students by researching the best & easiest Java resourc
 
 1. Read notes in order (01, 02, 03...). Every note builds on the previous one.
 2. Every topic has: **simple explanation → real-life analogy → code example with output → common mistakes → quick revision**.
-3. After notes, practice questions of that topic (predict-the-output sections inside each note).
-4. A separate `questions/` section will have coding questions by category: **Easy / Medium / Hard / Important / Logic-Building**.
+3. Then solve questions from the `questions/` section — **hint dekho, KHUD try karo, fir solution kholo**.
+4. Questions categories: **Easy / Medium / Hard / Important / Logic-Building**.
 
 ---
 
@@ -37,17 +37,17 @@ These notes are made for students by researching the best & easiest Java resourc
 | 14 | [Collections (ArrayList, HashMap...)](notes/14-collections.md) | ✅ Done |
 | 15 | [Multithreading Basics](notes/15-multithreading-basics.md) | ✅ Done |
 
-### Part 2 — Coding Questions (separate section)
+### Part 2 — Coding Questions
 
-| Category | Status |
-|----------|--------|
-| 🟢 Easy | 🔜 Next |
-| 🟡 Medium | ⏳ Planned |
-| 🔴 Hard | ⏳ Planned |
-| ⭐ Important (exam/interview favourites) | ⏳ Planned |
-| 🧠 Logic Building | ⏳ Planned |
+| Category | Questions | Status |
+|----------|-----------|--------|
+| 🟢 Easy — [Batch 1 (Q1–Q15)](questions/01-easy.md), [Batch 2 (Q16–Q30)](questions/02-easy-batch2.md) | 30 | ✅ Done |
+| 🟡 Medium | — | 🔜 Next |
+| 🔴 Hard | — | ⏳ Planned |
+| ⭐ Important (exam/interview favourites) | — | ⏳ Planned |
+| 🧠 Logic Building | — | ⏳ Planned |
 
-> Every question will have: problem → hint → solution code → line-by-line explanation → dry run (how it works internally).
+> Every question: problem → hint (hidden) → solution code → line-by-line explanation → dry run (how it works internally).
 
 ---
 
