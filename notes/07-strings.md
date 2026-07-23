@@ -87,9 +87,28 @@ System.out.println(a == c);        // false 😱 (c is a separate object in Heap
 System.out.println(a.equals(c));   // true  ✅ (content is same)
 ```
 
-### Why? String Pool!
-- `"hello"` literals go into a special Heap area called the **String Pool** — same text = same object reused (memory saving).
-- `new String(...)` FORCES a new object outside the pool.
+### 📊 Why? String Pool! (ye diagram sab clear kar dega):
+
+```mermaid
+flowchart LR
+    subgraph STACK["STACK — references"]
+        A["a"]
+        B["b"]
+        C["c"]
+    end
+    subgraph HEAP["HEAP"]
+        subgraph POOL["String Pool — literals ka shared area"]
+            H1["hello<br>ONE shared object"]
+        end
+        H2["hello<br>separate object — new ne banaya"]
+    end
+    A -- "same address" --> H1
+    B -- "same address" --> H1
+    C -- "different address" --> H2
+```
+
+- `"hello"` literals go into a special Heap area called the **String Pool** — same text = same object reused (memory saving). Isliye `a == b` → **true**.
+- `new String(...)` FORCES a new object outside the pool. Isliye `a == c` → **false**.
 - `==` compares **addresses** (same object?), `.equals()` compares **content** (same text?).
 
 💡 **GOLDEN RULE: Strings ko hamesha `.equals()` se compare karo, kabhi `==` se nahi.**

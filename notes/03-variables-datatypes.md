@@ -31,6 +31,27 @@ Sugar container me sugar hi rakhoge, oil nahi. Same way — an `int` box can onl
 
 Java has exactly **8 primitive types**. Learn this table well — it's asked everywhere.
 
+### 📊 The full family tree (one look = full picture):
+
+```mermaid
+flowchart TD
+    DT["Java Data Types"] --> P["📦 Primitive — 8 types<br>store the VALUE itself"]
+    DT --> NP["🏷️ Non-Primitive — objects<br>store an ADDRESS (reference)"]
+    P --> WHOLE["Whole numbers"]
+    P --> DEC["Decimals"]
+    P --> CH["char — 1 character (2B)"]
+    P --> BO["boolean — true/false (1 bit)"]
+    WHOLE --> B1["byte — 1B"]
+    WHOLE --> S1["short — 2B"]
+    WHOLE --> I1["int — 4B ⭐"]
+    WHOLE --> L1["long — 8B"]
+    DEC --> F1["float — 4B"]
+    DEC --> D1["double — 8B ⭐"]
+    NP --> STR["String"]
+    NP --> ARR["Arrays"]
+    NP --> CLS["Your own classes"]
+```
+
 | Type | Stores | Size | Range (approx) | Example |
 |------|--------|------|----------------|---------|
 | `byte` | tiny whole number | 1 byte | -128 to 127 | `byte b = 100;` |
@@ -72,6 +93,14 @@ String name = "Ashu";
 ---
 
 ## 4. Type Casting — converting one box to another
+
+### 📊 The two directions (bottle analogy in picture form):
+
+```mermaid
+flowchart LR
+    SMALL["int — chhoti bottle 🍶"] -- "WIDENING: automatic ✅<br>no data loss possible" --> BIG["double — badi bottle 🍺"]
+    BIG -- "NARROWING: (int) cast likhna padega ⚠️<br>decimal part CUT ho jaata hai" --> SMALL
+```
 
 ### (a) Widening (small → big) — automatic, safe ✅
 ```java

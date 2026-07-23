@@ -102,13 +102,13 @@ Step 1: main() starts        → main's frame on Stack (x = 4)
 Step 2: square(4) called     → NEW frame on TOP (n = 4)
 Step 3: square returns 16    → square's frame REMOVED
 Step 4: 16 stored in result  → back in main's frame
+```
 
-   STACK during step 2:
-   ┌────────────────┐
-   │ square(): n=4  │ ← top (running)
-   ├────────────────┤
-   │ main(): x=4    │ ← waiting
-   └────────────────┘
+### 📊 Stack during step 2 (read bottom to top — plates!):
+
+```mermaid
+flowchart BT
+    MAINF["main frame: x = 4<br>⏸️ waiting below"] --> SQF["square frame: n = 4<br>▶️ running on TOP"]
 ```
 
 💡 Yehi wajah hai ki **infinite recursion → StackOverflowError** (note 02 se) — frames stack pe bharte jaate hain!
@@ -135,6 +135,14 @@ static void changeArr(int[] arr) { arr[0] = 100; }
 int[] nums = {1, 2, 3};
 changeArr(nums);
 System.out.println(nums[0]);   // 100 😱 — changed!
+```
+
+### 📊 Why? Copy bhi USI object ko point karti hai:
+
+```mermaid
+flowchart LR
+    NUMS["nums<br>(main ka reference)"] -- "points to" --> OBJ["🏭 Heap:<br>array 1, 2, 3"]
+    ARRP["arr<br>(method ko mili COPY)"] -- "points to SAME object" --> OBJ
 ```
 
 **Why?** Reference ki COPY jaati hai — but copy bhi USI Heap object ko point karti hai (note 06 ka reference trap, same funda!). Address ki photocopy se bhi ghar wahi milta hai 🏠
@@ -186,7 +194,20 @@ static int factorial(int n) {
 System.out.println(factorial(5));    // 120
 ```
 
-### 🔍 How it unfolds:
+### 📊 How it unfolds — going DOWN, then answers coming back UP:
+
+```mermaid
+flowchart TD
+    F5["factorial(5)<br>needs 5 × factorial(4)"] --> F4["factorial(4)<br>needs 4 × factorial(3)"]
+    F4 --> F3["factorial(3)<br>needs 3 × factorial(2)"]
+    F3 --> F2["factorial(2)<br>needs 2 × factorial(1)"]
+    F2 --> F1["factorial(1) = 1<br>🛑 BASE CASE — stop!"]
+    F1 -- "returns 1" --> R2["factorial(2) = 2 × 1 = 2"]
+    R2 -- "returns 2" --> R3["factorial(3) = 3 × 2 = 6"]
+    R3 -- "returns 6" --> R4["factorial(4) = 4 × 6 = 24"]
+    R4 -- "returns 24" --> R5["factorial(5) = 5 × 24 = 120 ✅"]
+```
+
 ```
 factorial(5) = 5 × factorial(4)
              = 5 × 4 × factorial(3)

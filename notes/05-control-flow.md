@@ -38,6 +38,23 @@ if (marks >= 90) {
 }
 ```
 
+### 📊 How Java walks through it (marks = 85):
+
+```mermaid
+flowchart TD
+    START["marks = 85"] --> C1{"marks >= 90 ?"}
+    C1 -- "No" --> C2{"marks >= 75 ?"}
+    C1 -- "Yes" --> A1["Grade A+"]
+    C2 -- "Yes" --> A2["Grade A ✅ runs"]
+    C2 -- "No" --> C3{"marks >= 60 ?"}
+    C3 -- "Yes" --> A3["Grade B"]
+    C3 -- "No" --> A4["Grade C (else)"]
+    A1 --> DONE["rest of the chain SKIPPED"]
+    A2 --> DONE
+    A3 --> DONE
+    A4 --> DONE
+```
+
 ⚠️ **Important:** Java checks top to bottom and runs **only the FIRST true block**, then skips the rest. Order matters!
 
 ---
@@ -93,6 +110,17 @@ Hello 2
 Hello 3
 Hello 4
 Hello 5
+```
+
+### 📊 The for-loop engine (yehi cycle har baar chalta hai):
+
+```mermaid
+flowchart TD
+    INIT["1️⃣ start: int i = 1<br>runs only ONCE"] --> COND{"2️⃣ condition:<br>i <= 5 ?"}
+    COND -- "true" --> BODY["3️⃣ body runs:<br>print Hello + i"]
+    BODY --> UPD["4️⃣ update: i++"]
+    UPD --> COND
+    COND -- "false" --> EXIT2["🚪 loop ENDS —<br>program continues below"]
 ```
 
 ### The 3 parts of `for` (super important):
