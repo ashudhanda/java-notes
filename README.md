@@ -51,12 +51,17 @@ These notes are made for students by researching the best & easiest Java resourc
 | 🔤 Strings | S1–S25 | [easy/strings.md](questions/easy/strings.md) |
 | 🎁 Collections, Methods & OOP | M1–M10 | [easy/mixed.md](questions/easy/mixed.md) |
 
+#### 🟡 Medium — 25 questions (aur aa rahe hain!)
+
+| Category | Questions | File |
+|----------|-----------|------|
+| ⚡ Batch 1 — techniques: two-pointer, binary search, Kadane, sliding window, stack, matrix | MD1–MD25 | [medium/01-medium.md](questions/medium/01-medium.md) |
+
 #### Aage ka plan
 
 | Category | Status |
 |----------|--------|
-| 🟡 Medium | 🔜 Next |
-| 🔴 Hard | ⏳ Planned |
+| 🔴 Hard | 🔜 Next |
 | ⭐ Important (exam/interview favourites) | ⏳ Planned |
 | 🧠 Logic Building | ⏳ Planned |
 
