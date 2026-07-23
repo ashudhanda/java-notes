@@ -39,15 +39,28 @@ These notes are made for students by researching the best & easiest Java resourc
 
 ### Part 2 — Coding Questions
 
-| Category | Questions | Status |
-|----------|-----------|--------|
-| 🟢 Easy — [Batch 1 (Q1–Q15)](questions/01-easy.md), [Batch 2 (Q16–Q30)](questions/02-easy-batch2.md) | 30 | ✅ Done |
-| 🟡 Medium | — | 🔜 Next |
-| 🔴 Hard | — | ⏳ Planned |
-| ⭐ Important (exam/interview favourites) | — | ⏳ Planned |
-| 🧠 Logic Building | — | ⏳ Planned |
+#### 🟢 Easy — 140 questions ✅
 
-> Every question: problem → hint (hidden) → solution code → line-by-line explanation → dry run (how it works internally).
+| Category | Questions | File |
+|----------|-----------|------|
+| 🎓 Starter Pack (detailed dry-runs) | Q1–Q15 | [01-easy.md](questions/01-easy.md) |
+| 🎓 Starter Pack Batch 2 | Q16–Q30 | [02-easy-batch2.md](questions/02-easy-batch2.md) |
+| 🔢 Numbers & Maths | N1–N30 | [easy/numbers.md](questions/easy/numbers.md) |
+| 🌟 Patterns & Loops | P1–P20 | [easy/patterns.md](questions/easy/patterns.md) |
+| 📦 Arrays | A1–A25 | [easy/arrays.md](questions/easy/arrays.md) |
+| 🔤 Strings | S1–S25 | [easy/strings.md](questions/easy/strings.md) |
+| 🎁 Collections, Methods & OOP | M1–M10 | [easy/mixed.md](questions/easy/mixed.md) |
+
+#### Aage ka plan
+
+| Category | Status |
+|----------|--------|
+| 🟡 Medium | 🔜 Next |
+| 🔴 Hard | ⏳ Planned |
+| ⭐ Important (exam/interview favourites) | ⏳ Planned |
+| 🧠 Logic Building | ⏳ Planned |
+
+> Every question: problem → solution (hidden — pehle khud try karo!) → idea/explanation. Starter Pack me full dry-run tables bhi hain.
 
 ---
 
