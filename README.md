@@ -10,14 +10,14 @@ These notes are made for students by researching the best & easiest Java resourc
 
 1. Read notes in order (01, 02, 03...). Every note builds on the previous one.
 2. Every topic has: **simple explanation → real-life analogy → code example with output → common mistakes → quick revision**.
-3. After notes, practice questions of that topic (coming soon in each note).
+3. After notes, practice questions of that topic (predict-the-output sections inside each note).
 4. A separate `questions/` section will have coding questions by category: **Easy / Medium / Hard / Important / Logic-Building**.
 
 ---
 
 ## 🗺️ Roadmap
 
-### Part 1 — Notes (topic-wise)
+### Part 1 — Notes (topic-wise) ✅ COMPLETE!
 
 | # | Topic | Status |
 |---|-------|--------|
@@ -35,13 +35,13 @@ These notes are made for students by researching the best & easiest Java resourc
 | 12 | [OOP 4 — Abstraction & Interfaces](notes/12-oop4-abstraction-interfaces.md) | ✅ Done |
 | 13 | [Exception Handling](notes/13-exception-handling.md) | ✅ Done |
 | 14 | [Collections (ArrayList, HashMap...)](notes/14-collections.md) | ✅ Done |
-| 15 | Multithreading Basics | 🔜 Next |
+| 15 | [Multithreading Basics](notes/15-multithreading-basics.md) | ✅ Done |
 
 ### Part 2 — Coding Questions (separate section)
 
 | Category | Status |
 |----------|--------|
-| 🟢 Easy | ⏳ Planned |
+| 🟢 Easy | 🔜 Next |
 | 🟡 Medium | ⏳ Planned |
 | 🔴 Hard | ⏳ Planned |
 | ⭐ Important (exam/interview favourites) | ⏳ Planned |
