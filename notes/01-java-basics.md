@@ -29,6 +29,19 @@ Computer only understands 0s and 1s (machine language). We can't write in 0s and
 **One-line memory trick:**
 > JDK ⊃ JRE ⊃ JVM  (JDK contains JRE, JRE contains JVM)
 
+### 📊 Picture it (one look = never forget):
+
+```mermaid
+flowchart TB
+    subgraph JDK["📦 JDK — Java Development Kit — to WRITE programs"]
+        subgraph JRE["🍳 JRE — Java Runtime Environment — to RUN programs"]
+            JVM["⚙️ JVM — Java Virtual Machine<br>runs bytecode line by line"]
+            LIBS["📚 Class Libraries<br>ready-made code Java gives you"]
+        end
+        TOOLS["🛠️ Development Tools<br>javac compiler, debugger, javadoc..."]
+    end
+```
+
 - Want to **run** Java programs only? → JRE is enough.
 - Want to **write** Java programs? → You need JDK.
 
@@ -36,10 +49,15 @@ Computer only understands 0s and 1s (machine language). We can't write in 0s and
 
 ## 3. How does Java code actually run? (Step by step)
 
-```
-Your Code          Compiler           Bytecode            JVM              Output
-Hello.java   →     (javac)      →     Hello.class    →    (java)     →    "Hello"
-(you write)      (translator)      (universal code)     (executor)
+```mermaid
+flowchart LR
+    SRC["📄 Hello.java<br>your code"] -- "javac<br>compiler" --> BC["🔤 Hello.class<br>bytecode — same everywhere"]
+    BC --> JW["JVM on Windows"]
+    BC --> JM["JVM on Mac"]
+    BC --> JL["JVM on Linux"]
+    JW --> OUT["✅ Output:<br>Hello, Java!"]
+    JM --> OUT
+    JL --> OUT
 ```
 
 **Step by step:**
@@ -48,7 +66,7 @@ Hello.java   →     (javac)      →     Hello.class    →    (java)     →  
    - Bytecode = a universal middle language. Not machine code, not Java.
 3. **JVM** reads bytecode and runs it on YOUR machine (Windows/Mac/Linux — each OS has its own JVM).
 
-💡 **This is why Java runs anywhere** — bytecode is the same everywhere; only the JVM changes per OS.
+💡 **This is why Java runs anywhere** — bytecode is the same everywhere; only the JVM changes per OS. (Look at the diagram: ONE bytecode, THREE different JVMs, same output!)
 
 ---
 

@@ -25,6 +25,14 @@ You can only put a plate on **top**, and remove from the **top**. This is called
 - **Method calls** — every time a method is called, a new "frame" (box) is placed on the stack. When the method finishes, its box is removed automatically.
 - **References** to objects (the "address slip" of objects, not the objects themselves).
 
+### 📊 Method frames in action (read bottom to top — like plates!):
+
+```mermaid
+flowchart BT
+    MAIN["main frame — first in, sits at the BOTTOM"] --> M1["method1 frame — called by main"]
+    M1 --> M2["method2 frame — called by method1<br>TOP plate: finishes first, removed first"]
+```
+
 ### Properties:
 - Very **fast**.
 - **Small** in size.
@@ -62,17 +70,21 @@ public class Main {
 }
 ```
 
-### Memory picture:
+### 📊 Memory picture:
 
-```
-        STACK                         HEAP
-┌─────────────────────┐      ┌──────────────────────┐
-│ main() frame:       │      │                      │
-│  age   = 20         │      │  [0, 0, 0]  ← array  │
-│  marks = @101 ──────┼─────→│  (at address @101)   │
-│  name  = @205 ──────┼─────→│  "Ashu"              │
-│                     │      │  (at address @205)   │
-└─────────────────────┘      └──────────────────────┘
+```mermaid
+flowchart LR
+    subgraph STACK["🍽️ STACK — fast, small, auto-cleaned"]
+        AGE["age = 20<br>(value stored directly)"]
+        MARKS["marks = @101<br>(just an address slip)"]
+        NAME["name = @205<br>(just an address slip)"]
+    end
+    subgraph HEAP["🏭 HEAP — big, shared, GC-cleaned"]
+        ARR["int array 0, 0, 0<br>lives at address @101"]
+        STR["String object: Ashu<br>lives at address @205"]
+    end
+    MARKS -- "points to" --> ARR
+    NAME -- "points to" --> STR
 ```
 
 💡 **Key idea:** `marks` does NOT contain the array. It contains the **address** of the array (like a home address slip). The real array lives in the Heap.
@@ -101,6 +113,17 @@ When an object in the Heap has **no reference pointing to it**, it becomes garba
 ```java
 String name = new String("Ashu");
 name = null;   // now nobody points to "Ashu" object → it becomes garbage
+```
+
+### 📊 How GC decides:
+
+```mermaid
+flowchart TD
+    OBJ["Object living in Heap"] --> Q{"Is any reference<br>still pointing to it?"}
+    Q -- "Yes" --> ALIVE["Stays alive ✅"]
+    ALIVE --> Q
+    Q -- "No" --> GARB["Becomes garbage 🗑️"]
+    GARB --> GC["Garbage Collector frees the memory<br>automatically, in the background 🧹"]
 ```
 
 The **Garbage Collector** runs automatically in the background and frees such memory. You don't (and can't) free memory manually in Java.
