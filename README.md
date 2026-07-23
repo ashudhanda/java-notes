@@ -29,8 +29,8 @@ These notes are made for students by researching the best & easiest Java resourc
 | 06 | [Arrays (1D, 2D)](notes/06-arrays.md) | ✅ Done |
 | 07 | [Strings](notes/07-strings.md) | ✅ Done |
 | 08 | [Methods & Method Overloading](notes/08-methods.md) | ✅ Done |
-| 09 | OOP 1 — Classes & Objects | 🔜 Next |
-| 10 | OOP 2 — Constructors, this, static | ⏳ Planned |
+| 09 | [OOP 1 — Classes & Objects](notes/09-oop1-classes-objects.md) | ✅ Done |
+| 10 | OOP 2 — Constructors, this, static | 🔜 Next |
 | 11 | OOP 3 — Inheritance & Polymorphism | ⏳ Planned |
 | 12 | OOP 4 — Abstraction & Interfaces | ⏳ Planned |
 | 13 | Exception Handling | ⏳ Planned |
