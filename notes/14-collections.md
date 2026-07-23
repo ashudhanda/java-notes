@@ -13,6 +13,17 @@ arr[3] = 40;                // 💥 ArrayIndexOutOfBoundsException (note 06!)
 
 **Collections:** size apne aap badhta-ghatta hai, add/remove/search ready-made methods, sab kuch built-in!
 
+### 📊 The family tree (ye picture yaad rakho):
+
+```mermaid
+flowchart TD
+    COL["Collection (interface — note 12!)"] --> LIST["List (interface)<br>order ✅ duplicates ✅"]
+    COL --> SET["Set (interface)<br>sirf UNIQUE items"]
+    MAP["Map (interface) — alag family<br>key → value pairs"] --> HM["HashMap 📖<br>dictionary jaisa"]
+    LIST --> AL["ArrayList 👜<br>stretchable shopping bag"]
+    SET --> HS["HashSet 🆔<br>Aadhaar system — no duplicates"]
+```
+
 ### The big 3 (95% kaam inhi se):
 
 | Collection | Kya hai | Analogy |
@@ -135,6 +146,15 @@ for (var entry : students.entrySet()) {
 ### 🏭 Analogy: Cloakroom 🎫
 Bag jama karo → token milta hai (KEY). Wapsi pe token do → APNA bag milta hai (VALUE). Token unique hota hai — do logo ka same token impossible (key unique!). Naya bag same token pe rakha → purana replace!
 
+### 📊 HashMap ek nazar me:
+
+```mermaid
+flowchart LR
+    K1["🎫 key: 1"] --> V1["value: Ashu"]
+    K2["🎫 key: 2"] --> V2["value: Rohan<br>(Rahul REPLACE hua — same key!)"]
+    K3["🎫 key: 3"] --> V3["value: Priya"]
+```
+
 ### THE classic pattern: frequency counting (interview me 100% aayega 🎯)
 
 ```java
@@ -155,10 +175,13 @@ System.out.println(freq);
 
 ## 5. Kaunsa collection kab? (decision guide)
 
-```
-Order chahiye + index se access?        → ArrayList
-Sirf unique items / fast "exists?"      → HashSet
-Key se value (id→naam, word→meaning)?  → HashMap
+### 📊 Decision flowchart — 3 second me choose karo:
+
+```mermaid
+flowchart TD
+    Q1{"Kya chahiye?"} -- "order + index se access" --> AL2["👜 ArrayList"]
+    Q1 -- "sirf unique items /<br>fast exists-check" --> HS2["🆔 HashSet"]
+    Q1 -- "key se value nikalna<br>(id → naam)" --> HM2["📖 HashMap"]
 ```
 
 | Kaam | Best choice |

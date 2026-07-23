@@ -157,11 +157,16 @@ t1.join(); t2.join();
 System.out.println(c.count);    // 2000 expect kiya... par aa sakta hai 1873! 😱
 ```
 
-### Kyu? Dono ne SAME value padhi:
-```
-t1: count padha (100)          t2: count padha (100)
-t1: 100+1 = 101 likha          t2: 100+1 = 101 likha
-Result: 2 increments, par count sirf +1 hua! ❌
+### 📊 Kyu? Dono ne SAME value padhi (lost update):
+
+```mermaid
+flowchart TD
+    S["count = 100"] --> T1R["t1 ne padha: 100"]
+    S --> T2R["t2 ne padha: 100 (saath me!)"]
+    T1R --> T1W["t1 ne likha: 100 + 1 = 101"]
+    T2R --> T2W["t2 ne likha: 100 + 1 = 101"]
+    T1W --> RES["final count = 101 ❌<br>2 increments hue, par +1 hi hua!"]
+    T2W --> RES
 ```
 
 ### 🏭 Analogy: Ek ATM, ek account, do log 🏧
@@ -179,11 +184,15 @@ Ab result HAMESHA 2000. `synchronized` = method pe lock: ek thread andar hai toh
 
 ## 7. Thread lifecycle (quick view)
 
-```
-NEW ──start()──▶ RUNNABLE ──scheduler──▶ RUNNING ──khatam──▶ TERMINATED
-                    ▲                        │
-                    └─── sleep()/join()/wait ─┘
-                         (BLOCKED/WAITING)
+### 📊 Poora lifecycle ek diagram me:
+
+```mermaid
+flowchart LR
+    NEW["🆕 NEW<br>object bana,<br>start nahi hua"] -- "start()" --> RUN["🟢 RUNNABLE<br>ready hai,<br>CPU ka wait"]
+    RUN -- "scheduler ne chuna" --> RNG["🏃 RUNNING<br>chal raha hai"]
+    RNG -- "sleep() / join() /<br>lock ka wait" --> BLK["⏸️ BLOCKED / WAITING"]
+    BLK -- "wait khatam" --> RUN
+    RNG -- "run() khatam" --> TERM["🏁 TERMINATED<br>dobara start ❌"]
 ```
 
 - **NEW**: object bana, start nahi hua

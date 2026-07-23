@@ -39,6 +39,21 @@ System.out.println("Program zinda hai! ✅");
 // Program zinda hai! ✅
 ```
 
+### 📊 Poora flow ek diagram me:
+
+```mermaid
+flowchart TD
+    TRY["try block — risky code chalta hai"] --> Q{"Exception aayi?"}
+    Q -- "Nahi" --> SKIPC["catch SKIP ho gaya"]
+    Q -- "Haan — baaki try SKIP" --> MATCH{"Matching catch mila?"}
+    MATCH -- "Haan" --> CATCH["catch block chalta hai ✅"]
+    MATCH -- "Nahi" --> CRASH["💥 program crash"]
+    SKIPC --> FIN["finally — HAMESHA chalta hai"]
+    CATCH --> FIN
+    CRASH --> FIN
+    FIN --> NEXT["program aage badhta hai<br>(agar crash nahi hua)"]
+```
+
 **Flow:** `try` me exception aayi → baaki try SKIP → matching `catch` chala → program AAGE badha. Exception nahi aayi → catch skip.
 
 ---
@@ -144,6 +159,16 @@ try { readFile(); } catch (IOException e) { ... }
 ---
 
 ## 7. Checked vs Unchecked (interview table 🎯)
+
+### 📊 Exception ka family tree (ye hierarchy interview me poochhi jaati hai!):
+
+```mermaid
+flowchart TD
+    T["Throwable"] --> ERR["Error 🚫 mat pakdo<br>StackOverflowError,<br>OutOfMemoryError"]
+    T --> EX["Exception"]
+    EX --> CHK["Checked ✅ compile time pe check<br>IOException, SQLException<br>handle karna COMPULSORY"]
+    EX --> RT["RuntimeException = Unchecked<br>NullPointerException, ArithmeticException,<br>ArrayIndexOutOfBoundsException<br>handle karna optional"]
+```
 
 | | Checked | Unchecked |
 |--|---------|-----------|
