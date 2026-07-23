@@ -26,8 +26,8 @@ These notes are made for students by researching the best & easiest Java resourc
 | 03 | [Variables & Data Types](notes/03-variables-datatypes.md) | ✅ Done |
 | 04 | [Operators](notes/04-operators.md) | ✅ Done |
 | 05 | [Control Flow (if-else, switch, loops)](notes/05-control-flow.md) | ✅ Done |
-| 06 | Arrays (1D, 2D) | 🔜 Next |
-| 07 | Strings | ⏳ Planned |
+| 06 | [Arrays (1D, 2D)](notes/06-arrays.md) | ✅ Done |
+| 07 | Strings | 🔜 Next |
 | 08 | Methods & Method Overloading | ⏳ Planned |
 | 09 | OOP 1 — Classes & Objects | ⏳ Planned |
 | 10 | OOP 2 — Constructors, this, static | ⏳ Planned |
