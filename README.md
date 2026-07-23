@@ -25,8 +25,8 @@ These notes are made for students by researching the best & easiest Java resourc
 | 02 | [Memory in Java — Stack, Heap, DMA, Garbage Collector](notes/02-memory-heap-stack.md) | ✅ Done |
 | 03 | [Variables & Data Types](notes/03-variables-datatypes.md) | ✅ Done |
 | 04 | [Operators](notes/04-operators.md) | ✅ Done |
-| 05 | Control Flow (if-else, switch, loops) | 🔜 Next |
-| 06 | Arrays (1D, 2D) | ⏳ Planned |
+| 05 | [Control Flow (if-else, switch, loops)](notes/05-control-flow.md) | ✅ Done |
+| 06 | Arrays (1D, 2D) | 🔜 Next |
 | 07 | Strings | ⏳ Planned |
 | 08 | Methods & Method Overloading | ⏳ Planned |
 | 09 | OOP 1 — Classes & Objects | ⏳ Planned |
