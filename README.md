@@ -34,8 +34,8 @@ These notes are made for students by researching the best & easiest Java resourc
 | 11 | [OOP 3 — Inheritance & Polymorphism](notes/11-oop3-inheritance-polymorphism.md) | ✅ Done |
 | 12 | [OOP 4 — Abstraction & Interfaces](notes/12-oop4-abstraction-interfaces.md) | ✅ Done |
 | 13 | [Exception Handling](notes/13-exception-handling.md) | ✅ Done |
-| 14 | Collections (ArrayList, HashMap...) | 🔜 Next |
-| 15 | Multithreading Basics | ⏳ Planned |
+| 14 | [Collections (ArrayList, HashMap...)](notes/14-collections.md) | ✅ Done |
+| 15 | Multithreading Basics | 🔜 Next |
 
 ### Part 2 — Coding Questions (separate section)
 
