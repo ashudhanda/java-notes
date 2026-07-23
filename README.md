@@ -51,18 +51,23 @@ These notes are made for students by researching the best & easiest Java resourc
 | 🔤 Strings | S1–S25 | [easy/strings.md](questions/easy/strings.md) |
 | 🎁 Collections, Methods & OOP | M1–M10 | [easy/mixed.md](questions/easy/mixed.md) |
 
-#### 🟡 Medium — 25 questions (aur aa rahe hain!)
+#### 🟡 Medium — 25 questions ✅
 
 | Category | Questions | File |
 |----------|-----------|------|
 | ⚡ Batch 1 — techniques: two-pointer, binary search, Kadane, sliding window, stack, matrix | MD1–MD25 | [medium/01-medium.md](questions/medium/01-medium.md) |
 
+#### 🔴 Hard — 18 questions ✅
+
+| Category | Questions | File |
+|----------|-----------|------|
+| 👾 Boss level — recursion, backtracking (N-Queens!), merge/quick sort, DP intro, rain water | HD1–HD18 | [hard/01-hard.md](questions/hard/01-hard.md) |
+
 #### Aage ka plan
 
 | Category | Status |
 |----------|--------|
-| 🔴 Hard | 🔜 Next |
-| ⭐ Important (exam/interview favourites) | ⏳ Planned |
+| ⭐ Important (exam/interview favourites) | 🔜 Next |
 | 🧠 Logic Building | ⏳ Planned |
 
 > Every question: problem → solution (hidden — pehle khud try karo!) → idea/explanation. Starter Pack me full dry-run tables bhi hain.
