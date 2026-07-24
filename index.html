@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Java Notes — Java Made Bilkul Simple ☕</title>
+  <meta name="description" content="Java should feel EASY, not scary. Simple notes + real-life analogies + 180+ coding questions for students.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --jn-text: #2C2C2B;
+      --jn-text-2: #7D7A75;
+      --jn-canvas: #FFFFFF;
+      --jn-surface: #F9F8F7;
+      --jn-surface-2: #F0EFED;
+      --jn-border: #E6E5E3;
+      --jn-accent: #2783DE;
+      --jn-accent-soft: #E5F2FC;
+      --jn-green: #46A171;
+      --jn-green-soft: #E8F1EC;
+    }
+    * { -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--jn-text);
+      background: var(--jn-canvas);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    /* ---------- Sidebar ---------- */
+    .sidebar {
+      background: var(--jn-surface);
+      border-right: 1px solid var(--jn-border);
+      padding-top: 12px;
+    }
+    .sidebar > h1 { margin: 0 auto 8px; font-size: 1.15rem; font-weight: 700; }
+    .sidebar > h1 a { color: var(--jn-text); }
+    .sidebar ul li a {
+      color: var(--jn-text-2);
+      font-size: 14px;
+      line-height: 1.45;
+      padding: 5px 0;
+    }
+    .sidebar ul li a:hover { color: var(--jn-accent); text-decoration: none; }
+    .sidebar ul li.active > a {
+      color: var(--jn-accent);
+      border-right: 2px solid var(--jn-accent);
+      font-weight: 600;
+    }
+    .sidebar ul li p { font-weight: 700; font-size: 13px; letter-spacing: .02em; color: var(--jn-text); margin: 14px 0 4px; }
+    .search { border-bottom: 1px solid var(--jn-border) !important; margin-bottom: 8px; }
+    .search input { background: transparent; font-size: 14px; }
+    .search .results-panel.show { padding-bottom: 12px; }
+    .search .matching-post { border-bottom: 1px solid var(--jn-border); }
+    .search h2 { font-size: 14px; color: var(--jn-accent); }
+    .sidebar-toggle { background: transparent; }
+    .sidebar-toggle span { background-color: var(--jn-accent); }
+    /* ---------- Content ---------- */
+    .content { padding-top: 8px; }
+    .markdown-section {
+      max-width: 760px;
+      padding: 24px 32px 48px;
+      color: var(--jn-text);
+    }
+    .markdown-section h1 { font-size: 2rem; font-weight: 700; margin: 0 0 1rem; }
+    .markdown-section h2 {
+      font-size: 1.45rem; font-weight: 650;
+      border-bottom: 1px solid var(--jn-border);
+      padding-bottom: .35rem; margin: 2.2rem 0 1rem;
+    }
+    .markdown-section h3 { font-size: 1.15rem; margin: 1.8rem 0 .8rem; }
+    .markdown-section a { color: var(--jn-accent); text-decoration: none; }
+    .markdown-section a:hover { text-decoration: underline; }
+    .markdown-section blockquote {
+      border-left: 4px solid var(--jn-accent);
+      background: var(--jn-accent-soft);
+      border-radius: 0 8px 8px 0;
+      padding: 8px 16px;
+      margin: 1.2em 0;
+      color: var(--jn-text);
+    }
+    .markdown-section blockquote p { margin: 6px 0; }
+    /* tables */
+    .markdown-section table { display: table; width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 14.5px; }
+    .markdown-section th {
+      background: var(--jn-surface);
+      color: var(--jn-text);
+      border: 1px solid var(--jn-border);
+      padding: 8px 12px; text-align: left; font-weight: 650;
+    }
+    .markdown-section td { border: 1px solid var(--jn-border); padding: 8px 12px; }
+    .markdown-section tr:nth-child(2n) { background: var(--jn-surface); }
+    /* code */
+    .markdown-section code {
+      font-family: Menlo, Consolas, "Liberation Mono", monospace;
+      background: var(--jn-surface-2);
+      color: #C0341D;
+      border-radius: 4px;
+      font-size: .85em;
+      padding: 2px 5px;
+    }
+    .markdown-section pre {
+      background: var(--jn-surface-2);
+      border: 1px solid var(--jn-border);
+      border-radius: 8px;
+      padding: 0;
+    }
+    .markdown-section pre > code {
+      background: transparent;
+      color: var(--jn-text);
+      font-size: 13.5px;
+      line-height: 1.55;
+      padding: 16px;
+    }
+    /* wide tables scroll inside, not the page */
+    .markdown-section { overflow-x: hidden; }
+    .markdown-section table { overflow-x: auto; }
+    @media (max-width: 600px) {
+      .markdown-section { padding: 16px 16px 40px; }
+      .markdown-section table { display: block; overflow-x: auto; }
+    }
+    /* progress bar */
+    #docsify-progress, .progress { background: var(--jn-accent) !important; }
+    /* ---------- Dark mode ---------- */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --jn-text: #FFFFFF;
+        --jn-text-2: rgba(255, 255, 255, 0.65);
+        --jn-canvas: #191919;
+        --jn-surface: #202020;
+        --jn-surface-2: #2A2A2A;
+        --jn-border: rgba(255, 255, 255, 0.2);
+        --jn-accent: #5E9FE8;
+        --jn-accent-soft: rgba(94, 159, 232, 0.12);
+      }
+      body, .content, .sidebar { color: var(--jn-text); }
+      body { background: var(--jn-canvas); }
+      .markdown-section code { color: #E8A87C; }
+      .markdown-section pre > code { color: var(--jn-text); }
+      .search input { color: var(--jn-text); }
+      .sidebar > h1 a { color: var(--jn-text); }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">☕ Loading Java Notes...</div>
+  <script>
+    window.$docsify = {
+      name: '☕ Java Notes',
+      repo: 'ashudhanda/java-notes',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      maxLevel: 3,
+      search: {
+        placeholder: '🔍 Search topics...',
+        noData: 'Kuch nahi mila 😅',
+        depth: 3
+      },
+      copyCode: {
+        buttonText: 'Copy',
+        successText: 'Copied ✅'
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+</body>
+</html>
